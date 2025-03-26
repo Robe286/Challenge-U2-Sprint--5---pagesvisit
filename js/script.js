@@ -7,38 +7,37 @@
 // Debe persistir el número aunque se cierre el navegador
 
 // Si deseas reiniciar el contador, haz clic en el botón "Reestablecer Contador" y se pondrá a cero y comenzará de nuevo en 1 en la siguiente visita.
+    
     // - Revisar documentación botones
-    // - comenzara de nuevo en 1, revisar como (getelement by id??)
+    // - comenzara de nuevo en 1, revisar como
 
-// Siéntete libre de personalizar la aplicación según tus necesidades. Puedes ajustar los estilos y agregar nuevas funcionalidades
+    // Siéntete libre de personalizar la aplicación según tus necesidades. Puedes ajustar los estilos y agregar nuevas funcionalidades
 
+// --- PAGE VISIT ---
 
+const contadorVisitas = document.getElementById("contadorVisitas");  // Capturar contador de visitas
+const btnReestablecer = document.getElementById("btnReestablecer"); // Capturar botón de reset
 
-const contadorVisitas = document.getElementById("contadorVisitas");  // Contador de visitas capturado
-const btnRestablecer = document.getElementById("btnReestablecer"); // Botón de reset capturado
+// evento de escucha al recargar la página y función impresión en el contador usando el DOM:
 
-//console.log(parseFloat("contadorVisitas"))
+const refresh = window.addEventListener('load', () => contadorVisitas.innerHTML = 1);
+console.log(contadorVisitas)
 
+// Creación de objeto con clave - valor (refresh):
 
-console.log(parseFloat(contadorVisitas))
-
-//window.addEventListener('load', () => contadorVisitas.innerHTML += 1);
-
-
-/*const text ='0'
-console.log(text)
-console.log(parseFloat(text) + 2)*/
-
-
-
-
-
-
-
-/*const datos = {
+const datos = {
     visitas: '',
 }
 
-localStorage.setItem('visitas', '');
+// Introducir dato en localStorage y cogerlo:
 
-const visitas = localStorage.getItem('visitas');*/
+localStorage.setItem('visitas', `${refresh}`);
+const visitas = localStorage.getItem('visitas');
+
+// Reiniciar contador:
+
+const reset = btnReestablecer.addEventListener('click', () => {
+    contadorVisitas.innerHTML = 0;
+})
+
+
