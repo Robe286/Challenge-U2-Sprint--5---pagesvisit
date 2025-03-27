@@ -15,8 +15,8 @@
 
 // --- PAGE VISIT ---
 
-const contadorVisitas = document.getElementById("contadorVisitas");  // Capturar contador de visitas
-const btnReestablecer = document.getElementById("btnReestablecer"); // Capturar botón de reset
+const contadorVisitas = document.getElementById('contadorVisitas');  // Capturar contador de visitas
+const btnReestablecer = document.getElementById('btnReestablecer'); // Capturar botón de reset
 
 // evento de escucha al recargar la página y función impresión en el contador usando el DOM:
 
@@ -34,13 +34,14 @@ const refresh = window.addEventListener('load', () => contadorVisitas.innerHTML 
 // Creación de objeto con clave - valor (refresh):
 
 const datos = {
-    visitas: '',
+    visitas: `${refresh}`,
 }
 
 // Contador de visitas persistente:
 
 localStorage.setItem('visitas', `${refresh}`);
 const visitas = localStorage.getItem('visitas');
+console.log(localStorage)
 
 // Reiniciar contador:
 
