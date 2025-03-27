@@ -20,8 +20,16 @@ const btnReestablecer = document.getElementById("btnReestablecer"); // Capturar 
 
 // evento de escucha al recargar la página y función impresión en el contador usando el DOM:
 
-const refresh = window.addEventListener('load', () => contadorVisitas.innerHTML = 1);
-console.log(contadorVisitas)
+/*let accumulator = new Accumulator(1); // valor inicial 1
+
+accumulator.read(); // agrega el valor introducido por el usuario
+accumulator.read(); // agrega el valor introducido por el usuario
+
+alert(accumulator.value); // muestra la suma de estos valores*/
+
+
+const refresh = window.addEventListener('load', () => contadorVisitas.innerHTML = 1); //¿COMO AÑADIR LAS VISITAS?
+
 
 // Creación de objeto con clave - valor (refresh):
 
@@ -29,7 +37,7 @@ const datos = {
     visitas: '',
 }
 
-// Introducir dato en localStorage y cogerlo:
+// Contador de visitas persistente:
 
 localStorage.setItem('visitas', `${refresh}`);
 const visitas = localStorage.getItem('visitas');
